@@ -15,3 +15,5 @@ jobs:
         dotnet-version: 3.0.100-preview9-013947
     - name: Build with dotnet
       run: dotnet build --configuration Release
+    - name: Publish nuget package
+      run: dotnet pack --version-suffix "$GITHUB_SHA"
